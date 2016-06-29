@@ -206,7 +206,12 @@ function nexus_form_element(&$variables) {
   if ($element['#title_display'] === 'after') {
     $build['label']['#weight'] = 10;
   }
-
+ // Build the form element.
+    $build['element'] = array(
+      '#markup' => $element['#children'],
+      '#prefix' => !empty($prefix) ? $prefix : NULL,
+      '#suffix' => !empty($suffix) ? $suffix : NULL,
+    );
   // Checkboxes and radios render the input element inside the label. If the
   // element is neither of those, then the input element must be rendered here.
   if (!$checkbox && !$radio) {

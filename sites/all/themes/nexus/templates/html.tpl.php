@@ -23,7 +23,7 @@
 				jQuery(this).parent().addClass('active');
 			}
 		});	
-
+		jQuery(".field-name-field-licenses").detach().appendTo('#membership-form')
 });
 </script>
 <!--[if lt IE 9]><script src="<?php print base_path() . drupal_get_path('theme', 'nexus') . '/js/html5.js'; ?>"></script><![endif]-->

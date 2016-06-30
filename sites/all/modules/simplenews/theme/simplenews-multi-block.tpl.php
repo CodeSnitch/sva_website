@@ -24,7 +24,7 @@
 <div <?php if ($_GET['q'] == 'News') print 'class="col-lg-6"'; else print 'style="width:100%;float:left;"';?>>
   <?php if ($message): ?>
   	<?php if ($_GET['q'] == 'News'):?>
-    <h2>Welcome to ours news room. Here you can find latest news stories about social value Aotearoa.</h2>
+    <h3>Welcome to ours news room. Here you can find latest news stories about social value Aotearoa.</h3>
 	<?php else: ?>
     <h2>Latest Newsletters</h2>
 	<?php endif; ?>

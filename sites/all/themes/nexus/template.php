@@ -310,7 +310,7 @@ function nexus_preprocess_user_login(&$vars) {
 }
 
 function nexus_form_alter(&$form, &$form_state, $form_id){//replace your module name with MYMODULE
-  if(strpos($form_id, 'commerce-cart-add-to-cart-form-5') !== false){//my form ID is "commerce-cart-add-to-cart-form-65", replace it with your form ID.
+  if(strpos($form_id, 'commerce-cart-add-to-cart-form-3') !== false){//my form ID is "commerce-cart-add-to-cart-form-65", replace it with your form ID.
     $form['submit']['#value'] = t('Pay online now');//Put the text which you want to make appear instead of "Add to cart".
   }
 }

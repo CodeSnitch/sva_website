@@ -217,9 +217,9 @@ $databases = array (
   array (
     'default' =>
     array (
-      'database' => 'membership',
-      'username' => 'drupal',
-      'password' => 'drupal',
+      'database' => 'sva',
+      'username' => 'root',
+      'password' => '',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',

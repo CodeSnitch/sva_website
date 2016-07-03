@@ -64,6 +64,17 @@
  * @see template_process()
  */
 global $base_url;
+global $user;
+global $user;
+$quantity = 0;
+$order = commerce_cart_order_load($user->uid);
+if ($order) {
+    $wrapper = entity_metadata_wrapper('commerce_order', $order);
+    $line_items = $wrapper->commerce_line_items;
+    $quantity = commerce_line_items_quantity($line_items, commerce_product_line_item_types());
+    $total = commerce_line_items_total($line_items);
+    $currency = commerce_currency_load($total['currency_code']);
+}
 ?>
 <div id="page">
   <nav class="navbar navbar-default container">
@@ -99,6 +110,16 @@ global $base_url;
                 <img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_linkedin.svg" alt="Link In"/>
               </a>
             </li>
+              <?php if(user_is_logged_in()): ?>
+            <li class="top-user text-capitalize">
+                <a href="<?php print $base_url;?>/user">Hi, <?php print $user->name;?></a>
+            </li>
+              <?php endif;?>
+              <?php if($quantity>0): ?>
+            <li class="top-cart">
+                <a href="<?php print $base_url;?>/cart"><img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_cart.svg" /><?php print $quantity?></a>
+            </li>
+              <?php endif;?>
             <li id="btn_member_login" class="text-capitalize">
               <?php if(!user_is_logged_in()): ?>
               <a href="<?php print $base_url;?>/user/login" rel="Login">Member Login</a>
@@ -117,6 +138,13 @@ global $base_url;
           print drupal_render($main_menu_tree);
           ?>
           <ul class="nav navbar-nav text-uppercase navbar-right" id="mobile-social-links">
+            <li id="btn_member_login" class="text-capitalize">
+              <?php if(!user_is_logged_in()): ?>
+              <a href="<?php print $base_url;?>/user/login" rel="Login">Member Login</a>
+              <?php else: ?>
+              <a href="<?php print $base_url;?>/user/logout" rel="Login">Logout</a>
+              <?php endif; ?>
+            </li>
             <li class="social">
               <a href="https://facebook.com/socialvalueaotearoa" rel="Facebook">
                 <img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_facebook.svg" alt="Link In"/>
@@ -128,15 +156,7 @@ global $base_url;
                 <img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_linkedin.svg" alt="Link In"/>
               </a>
             </li>
-            <li id="btn_member_login" class="text-capitalize">
-              <?php if(!user_is_logged_in()): ?>
-              <a href="<?php print $base_url;?>/user/login" rel="Login">Member Login</a>
-              <?php else: ?>
-              <a href="<?php print $base_url;?>/user/logout" rel="Login">Logout</a>
-              <?php endif; ?>
-            </li>
           </ul> 
-                  
         </div><!-- /.navbar-collapse -->
       </div>
     </div><!-- /.container>-->
@@ -216,7 +236,7 @@ global $base_url;
             </div>         
           </div>
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="glyphicon gylphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">

@@ -57,7 +57,7 @@ function theme_social_share_links($variables) {
     }
   }
   else {
-    $content['#prefix'] = '<div class="social-share clearfix">';
+    $content['#prefix'] = '<div class="social-share dividen-line">&nbsp;</div><div class="social-share">Share</div><div class="social-share">';
     $content['#suffix'] = '</div>';
 
     if (variable_get('social_share_enabled_' . $node->type, 0)) {

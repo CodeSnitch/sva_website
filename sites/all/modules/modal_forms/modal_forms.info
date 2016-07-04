@@ -1,12 +1,13 @@
 name = Modal forms
 description = This module use ctools modal feature to open some common forms in a modal window.
 dependencies[] = ctools
+files[] = modal_forms.rules.inc
 core = 7.x
 configure = admin/config/development/modal_forms
 
-; Information added by drupal.org packaging script on 2012-11-19
-version = "7.x-1.2"
+; Information added by Drupal.org packaging script on 2015-02-06
+version = "7.x-1.2+16-dev"
 core = "7.x"
 project = "modal_forms"
-datestamp = "1353326875"
+datestamp = "1423212183"
 

@@ -190,15 +190,7 @@ function commerce_registration_information_checkout_form_validate($form, &$form_
           case REGISTRATION_REGISTRANT_TYPE_ANON:
             $mail = $form_state['values']['registration_information'][$prodkey][$prodkey . '-reg-' . $i]['anon_mail'];
             $mail_is_required = $form['registration_information'][$prodkey][$prodkey . '-reg-' . $i]['anon_mail']['#required'];
-            if (!registration_is_registered($entity, $mail)) {
-              form_set_error(
-                "registration_information][" . $prodkey . "]["
-                    . $prodkey . "-reg-" . $i . "][anon_mail",
-                  t("The email address entered is already registered for this item.")
-              );
-              $ret = FALSE;
-            }
-            elseif (in_array($mail, $emails)) {
+            if (in_array($mail, $emails)) {
               form_set_error(
                 "registration_information][" . $prodkey . "]["
                   . $prodkey . "-reg-" . $i . "][anon_mail",

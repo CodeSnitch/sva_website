@@ -156,6 +156,17 @@ if ($order) {
                 <img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_linkedin.svg" alt="Link In"/>
               </a>
             </li>
+              <?php if(user_is_logged_in()): ?>
+            <li class="top-user text-capitalize">
+                <a href="<?php print $base_url;?>/user">Hi, <?php print $user->name;?></a>
+            </li>
+              <?php endif;?>
+              <?php if($quantity>0): ?>
+            <li class="top-cart">
+                <a href="<?php print $base_url;?>/cart"><img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_cart.svg" /><?php print $quantity?></a>
+            </li>
+              <?php endif;?>
+            
           </ul> 
         </div><!-- /.navbar-collapse -->
       </div>
@@ -236,7 +247,7 @@ if ($order) {
             </div>         
           </div>
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon gylphicon-chevron-left" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
           <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">

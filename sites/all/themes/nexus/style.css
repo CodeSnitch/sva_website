@@ -257,7 +257,6 @@ label {
   /*@media(max-width: 480px){
 		margin-bottom: 0;
 		}*/
-
 }
 /* bottom*/
 .not-front #bottom {
@@ -391,7 +390,6 @@ label {
   width: 100%;
   color: white;
   /*text-transform: uppercase;*/
-
   text-align: center;
   vertical-align: middle;
   padding-top: 40px;
@@ -582,7 +580,6 @@ input[type=button] {
   border: none;
   background-color: #4d617e;
   /*font-weight: bold;*/
-
   font-size: 14px;
   color: #fff;
   line-height: 15px;
@@ -856,7 +853,6 @@ padding-right: 0;
 #top-menu {
   clear: right;
   /*margin-top: 20px;*/
-
   margin-top: 6px;
   margin-right: -15px;
 }
@@ -1282,7 +1278,6 @@ ul.points {
   /*.pdf-button{
 					padding: 4px 7px;
 					}*/
-
 }
 .view-resource-newsletter ul li .ib3-info-right .ultb3-title,
 .view-presenter-material ul li .ib3-info-right .ultb3-title,
@@ -1383,46 +1378,34 @@ ul#about-us-ul li {
 .mphoto-gallery .four-column-row img:hover {
   -webkit-transform: scale(1.25);
   /* Safari and Chrome */
-
   -moz-transform: scale(1.25);
   /* Firefox */
-
   -ms-transform: scale(1.25);
   /* IE 9 */
-
   -o-transform: scale(1.25);
   /* Opera */
-
   transform: scale(1.25);
 }
 .mphoto-gallery .twocolcombine .big-column .nest-two-column-row img:hover {
   -webkit-transform: scale(1.25);
   /* Safari and Chrome */
-
   -moz-transform: scale(1.25);
   /* Firefox */
-
   -ms-transform: scale(1.25);
   /* IE 9 */
-
   -o-transform: scale(1.25);
   /* Opera */
-
   transform: scale(1.25);
 }
 .mphoto-gallery .twocolcombine .big-column img:hover {
   -webkit-transform: scale(1.25);
   /* Safari and Chrome */
-
   -moz-transform: scale(1.25);
   /* Firefox */
-
   -ms-transform: scale(1.25);
   /* IE 9 */
-
   -o-transform: scale(1.25);
   /* Opera */
-
   transform: scale(1.25);
 }
 #edit-settings {
@@ -1471,7 +1454,6 @@ ul#about-us-ul li {
   background-repeat: no-repeat;
   background-position: center;
   /* background-size: 100%; */
-
   text-indent: -999999px;
   display: inline-block;
 }

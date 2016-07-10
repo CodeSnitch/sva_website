@@ -67,6 +67,8 @@ global $base_url;
 global $user;
 global $user;
 $quantity = 0;
+$fulurl = $_SERVER['HTTP_HOST'] . request_uri();
+
 $order = commerce_cart_order_load($user->uid);
 if ($order) {
     $wrapper = entity_metadata_wrapper('commerce_order', $order);
@@ -74,6 +76,15 @@ if ($order) {
     $quantity = commerce_line_items_quantity($line_items, commerce_product_line_item_types());
     $total = commerce_line_items_total($line_items);
     $currency = commerce_currency_load($total['currency_code']);
+}
+function showCart($fulurl){
+  $result = false;
+  if (strpos($fulurl, 'events') !== false 
+    || strpos($fulurl, 'membership') !== false
+    || strpos($fulurl, 'cart') !== false) {
+    $result = true;
+  }
+  return $result;
 }
 ?>
 <div id="page">
@@ -115,11 +126,11 @@ if ($order) {
                 <a href="<?php print $base_url;?>/user">Hi, <?php print $user->name;?></a>
             </li>
               <?php endif;?>
-              <?php if($quantity>0): ?>
+              <?php if(showCart($fulurl)):?>
             <li class="top-cart">
                 <a href="<?php print $base_url;?>/cart"><img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_cart.svg" /><?php print $quantity?></a>
             </li>
-              <?php endif;?>
+              <?php endif; ?>
             <li id="btn_member_login" class="text-capitalize">
               <?php if(!user_is_logged_in()): ?>
               <a href="<?php print $base_url;?>/user/login" rel="Login">Member Login</a>
@@ -161,12 +172,11 @@ if ($order) {
                 <a href="<?php print $base_url;?>/user">Hi, <?php print $user->name;?></a>
             </li>
               <?php endif;?>
-              <?php if($quantity>0): ?>
+              <?php if(showCart($fulurl)):?>
             <li class="top-cart">
                 <a href="<?php print $base_url;?>/cart"><img src="<?php print $base_url;?>/sites/all/themes/nexus/images/icon_cart.svg" /><?php print $quantity?></a>
             </li>
-              <?php endif;?>
-            
+              <?php endif; ?>
           </ul> 
         </div><!-- /.navbar-collapse -->
       </div>

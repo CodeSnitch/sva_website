@@ -219,7 +219,7 @@ $databases = array (
     array (
       'database' => 'sva',
       'username' => 'root',
-      'password' => '1234',
+      'password' => '',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',

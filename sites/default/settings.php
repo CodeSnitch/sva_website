@@ -218,9 +218,9 @@ $databases = array (
     'default' =>
     array (
       'database' => 'sva',
-      'username' => 'db84088_sva',
-      'password' => 'ArmemorY!123',
-      'host' => 'external-db.s84088.gridserver.com',
+      'username' => 'root',
+      'password' => '1234',
+      'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
       'prefix' => '',
